@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftCart - Premium Shopping Experience</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+        --color-primary: #714fc4;
+        --color-secondary: #334155;
+        --color-accent: #3b82f6;
+        --color-accent-hover: #2563eb;
+        
+        --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+        
+        --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-glow: 0 0 15px rgba(59, 130, 246, 0.5);
+      }
+    </style>
+    <!-- Heroicons Script (for icons) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- custom css file  -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-50 text-slate-800 antialiased selection:bg-accent selection:text-white">
+
+    <!-- Header and Hero Section -->
+    <header
+        class="hero relative bg-linear-to-r from-gray-900 to-gray-200 pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+
+        <!-- Navigation -->
+        <nav class="fixed w-full top-0 z-50 transition-all duration-300 glass bg-white" id="navbar">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-20">
+                    <!-- Logo -->
+                    <div class="cursor-pointer" onclick="window.scrollTo(0,0)">
+                        <span class="font-bold text-2xl tracking-tight text-primary">SwiftCart</span>
+                    </div>
+
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#" class="text-secondary hover:text-primary font-medium transition-colors">Home</a>
+                        <a href="#products"
+                            class="text-secondary hover:text-primary font-medium transition-colors">Products</a>
+                        <a href="#about"
+                            class="text-secondary hover:text-primary font-medium transition-colors">About</a>
+                        <a href="#contact"
+                            class="text-secondary hover:text-primary font-medium transition-colors">Contact</a>
+                    </div>
+
+                    <!-- Icons & Mobile Menu Button -->
+                    <div class="flex items-center gap-4">
+                        <button class="relative p-2 text-secondary cursor-pointer hover:text-primary transition-colors"
+                            aria-label="Cart">
+                            <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                        </button>
+
+                        <button id="mobile-menu-btn"
+                            class="md:hidden p-2 text-secondary cursor-pointer hover:bg-slate-100 rounded-lg transition-colors">
+                            <i data-lucide="menu" class="w-6 h-6"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu (Hidden by default) -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
+                <div class="px-4 pt-2 pb-6 space-y-2 w-full text-center">
+                    <a href="#"
+                        class="block px-3 py-3 rounded-md text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 transition-colors">Home</a>
+                    <a href="#products"
+                        class="block px-3 py-3 rounded-md text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 transition-colors">Products</a>
+                    <a href="#about"
+                        class="block px-3 py-3 rounded-md text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 transition-colors">About</a>
+                    <a href="#contact"
+                        class="block px-3 py-3 rounded-md text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 transition-colors">Contact</a>
+                </div>
+            </div>
+        </nav>
+        <!-- hero text -->
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="space-y-6 fade-in-up">
+                <h1 class="text-5xl lg:text-7xl font-bold text-white leading-tight">
+                    Best Collection For You
+                </h1>
+                <p class="text-lg text-white max-w-xs md:max-w-xl  leading-relaxed">
+                    Discover the latest trends in fashion, electronics, and more. Shop with confidence and style at
+                    SwiftCart.
+                </p>
+
+                <a href="#products"
+                    class="px-8 py-4 bg-indigo-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:bg-indigo-700 transition-all transform hover:-translate-y-1">
+
+                    Shop Now
+                </a>
+            </div>
+        </div>
+        
+    </header>
+
+    <!-- Features Section -->
+    <section id="about" class="py-20 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-black mb-4">Why Choose Us</h2>
+                <p class="text-slate-600">We provide the best shopping experience with top-notch experience</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3  lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div
+                    class="group relative p-8 rounded-2xl bg-gray-100 hover:bg-gray-200 border-gray-100  hover:shadow-xl transition-all duration-300">
+                    <div class="absolute top-0 -translate-y-1/2 bg-white h-18 w-18 p-2 rounded-xl">
+                        <div
+                            class="bg-blue-100 p-2   w-14 h-14  text-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="truck" class="w-7 h-7"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-medium my-6">Fast Delivery</h3>
+                    <p class="text-slate-500 leading-relaxed">Get your orders delivered to your doorstep quickly.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div
+                    class="group relative p-8 rounded-2xl bg-gray-100 hover:bg-gray-200 border-gray-100  hover:shadow-xl transition-all duration-300">
+                    <div class="absolute top-0 -translate-y-1/2 bg-white h-18 w-18 p-2 rounded-xl">
+                        <div
+                            class="bg-blue-100 p-2   w-14 h-14  text-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="truck" class="w-7 h-7"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-medium my-6">Fast Delivery</h3>
+                    <p class="text-slate-500 leading-relaxed">Get your orders delivered to your doorstep quickly.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div
+                    class="group relative p-8 rounded-2xl bg-gray-100 hover:bg-gray-200 border-gray-100  hover:shadow-xl transition-all duration-300">
+                    <div class="absolute top-0 -translate-y-1/2 bg-white h-18 w-18 p-2 rounded-xl">
+                        <div
+                            class="bg-blue-100 p-2   w-14 h-14  text-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="truck" class="w-7 h-7"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-medium my-6">Fast Delivery</h3>
+                    <p class="text-slate-500 leading-relaxed">Get your orders delivered to your doorstep quickly.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div
+                    class="group relative p-8 rounded-2xl bg-gray-100 hover:bg-gray-200 border-gray-100  hover:shadow-xl transition-all duration-300">
+                    <div class="absolute top-0 -translate-y-1/2 bg-white h-18 w-18 p-2 rounded-xl">
+                        <div
+                            class="bg-blue-100 p-2   w-14 h-14  text-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="truck" class="w-7 h-7"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-medium my-6">Fast Delivery</h3>
+                    <p class="text-slate-500 leading-relaxed">Get your orders delivered to your doorstep quickly.</p>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!-- Trending Products Section -->
+    <section id="products" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-black mb-6">Trending Now</h2>
+
+            <!-- Products Grid -->
+            <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-8">
+                <!-- Products will load here by JS -->
+
+                <!-- dummay products -->
+                <!-- product card 1 -->
+                <div
+                    class="group bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 w-full max-w-sm flex flex-col gap-4">
+
+                    <!-- Image Container -->
+                    <div class="bg-gray-100 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/5556283/pexels-photo-5556283.jpeg" alt="Bag"
+                            class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+
+                    <!-- badges -->
+                    <div class="flex justify-between items-center px-2">
+                        <div
+                            class=" bg-blue-100 text-primary text-xs font-bold px-3 py-1.5 rounded-full shadow-sm z-10">
+                            Men's clothing
+                        </div>
+                        <div class="flex items-center gap-1 mb-3">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <span class="text-xs text-slate-400 font-medium ml-1">3.9 (120)</span>
+                        </div>
+                    </div>
+
+
+                    <!-- Product Info -->
+                    <div class="px-2">
+                        <h3 class="font-semibold text-lg text-black">Stylish Bag</h3>
+                        <div class="mt-2">
+                            <span class="text-xl font-bold ">$109.95</span>
+                        </div>
+                    </div>
+                    <!-- buttons -->
+                    <div class="flex justify-between items-center gap-2 p-4">
+                        <button
+                            class="w-full  backdrop-blur-md font-semibold py-3 rounded-xl shadow-lg  flex items-center justify-center gap-2 border border-gray-400 cursor-pointer hover:bg-gray-100 hover:text-primary transition-all duration-300">
+                            <i data-lucide="eye" class="w-5 h-5"></i>
+                            Details
+                        </button>
+                        <button
+                            class="w-full bg-indigo-600 text-white  cursor-pointer backdrop-blur-md  font-semibold py-3 rounded-xl shadow-lg  flex items-center justify-center gap-2 hover:bg-indigo-700 transition-all duration-300">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            Add
+                        </button>
+                    </div>
+                </div>
+                <!-- product card 2 -->
+                <div
+                    class="group bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 w-full max-w-sm flex flex-col gap-4">
+
+                    <!-- Image Container -->
+                    <div class="bg-gray-100 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/5556283/pexels-photo-5556283.jpeg" alt="Bag"
+                            class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+
+                    <!-- badges -->
+                    <div class="flex justify-between items-center px-2">
+                        <div
+                            class=" bg-blue-100 text-primary text-xs font-bold px-3 py-1.5 rounded-full shadow-sm z-10">
+                            Men's clothing
+                        </div>
+                        <div class="flex items-center gap-1 mb-3">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <span class="text-xs text-slate-400 font-medium ml-1">3.9 (120)</span>
+                        </div>
+                    </div>
+
+
+                    <!-- Product Info -->
+                    <div class="px-2">
+                        <h3 class="font-semibold text-lg text-black">Stylish Bag</h3>
+                        <div class="mt-2">
+                            <span class="text-xl font-bold ">$109.95</span>
+                        </div>
+                    </div>
+                    <!-- buttons -->
+                    <div class="flex justify-between items-center gap-2 p-4">
+                        <button
+                            class="w-full  backdrop-blur-md font-semibold py-3 rounded-xl shadow-lg  flex items-center justify-center gap-2 border border-gray-400 cursor-pointer hover:bg-gray-100 hover:text-primary transition-all duration-300">
+                            <i data-lucide="eye" class="w-5 h-5"></i>
+                            Details
+                        </button>
+                        <button
+                            class="w-full bg-indigo-600 text-white  cursor-pointer backdrop-blur-md  font-semibold py-3 rounded-xl shadow-lg  flex items-center justify-center gap-2 hover:bg-indigo-700 transition-all duration-300">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            Add
+                        </button>
+                    </div>
+                </div>
+                <!-- product card 3 -->
+                <div
+                    class="group bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 w-full max-w-sm flex flex-col gap-4">
+
+                    <!-- Image Container -->
+                    <div class="bg-gray-100 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/5556283/pexels-photo-5556283.jpeg" alt="Bag"
+                            class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+
+                    <!-- badges -->
+                    <div class="flex justify-between items-center px-2">
+                        <div
+                            class=" bg-blue-100 text-primary text-xs font-bold px-3 py-1.5 rounded-full shadow-sm z-10">
+                            Men's clothing
+                        </div>
+                        <div class="flex items-center gap-1 mb-3">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <span class="text-xs text-slate-400 font-medium ml-1">3.9 (120)</span>
+                        </div>
+                    </div>
+
+
+                    <!-- Product Info -->
+                    <div class="px-2">
+                        <h3 class="font-semibold text-lg text-black">Stylish Bag</h3>
+                        <div class="mt-2">
+                            <span class="text-xl font-bold ">$109.95</span>
+                        </div>
+                    </div>
+                    <!-- buttons -->
+                    <div class="flex justify-between items-center gap-2 p-4">
+                        <button
+                            class="w-full  backdrop-blur-md font-semibold py-3 rounded-xl shadow-lg  flex items-center justify-center gap-2 border border-gray-400 cursor-pointer hover:bg-gray-100 hover:text-primary transition-all duration-300">
+                            <i data-lucide="eye" class="w-5 h-5"></i>
+                            Details
+                        </button>
+                        <button
+                            class="w-full bg-indigo-600 text-white  cursor-pointer backdrop-blur-md  font-semibold py-3 rounded-xl shadow-lg  flex items-center justify-center gap-2 hover:bg-indigo-700 transition-all duration-300">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 border-t border-slate-200 pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <!-- Logo -->
+                    <div class="cursor-pointer mb-6" onclick="window.scrollTo(0,0)">
+                        <span class="font-bold text-2xl tracking-tight text-primary">SwiftCart</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Making premium fashion accessible to everyone. Quality, style, and comfort in one place.
+                    </p>
+
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-gray-400 mb-6">QUICK LINKS</h4>
+                    <ul class="space-y-3 text-sm text-white">
+                        <li><a href="#" class="hover:text-accent transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-accent transition-colors">About</a></li>
+                        <li><a href="#products" class="hover:text-accent transition-colors">Products</a></li>
+                        <li><a href="#contact" class="hover:text-accent transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-gray-400 mb-6">SUPPORTS</h4>
+                    <ul class="space-y-3 text-sm text-white">
+                        <li><a href="#" class="hover:text-accent transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Shipping</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Returns</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <h4 class="font-bold text-gray-400 uppercase">Subscribe to Our Newsletter</h4>
+                    <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, harum.</p>
+                    <!-- newsletter form -->
+                    <form class="flex flex-col lg:flex-row  gap-4 mx-auto w-full"
+                        onsubmit="event.preventDefault(); alert('Subscribed!')">
+                        <input type="email" placeholder="Enter your email"
+                            class="lg:w-1/2 px-4 py-4 rounded-xl bg-white border border-slate-700 placeholder-gray-500 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all">
+                        <button type="submit"
+                            class="lg:w-1/2 py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 shadow-lg hover:shadow-indigo/50 transition-all cursor-pointer">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-100 pt-8 flex flex-col-reverse md:flex-row justify-between  gap-6">
+                <p class="text-slate-400 text-sm">© 2026 SwiftCart, Inc. All rights reserved.</p>
+
+                <div class="flex gap-6">
+                    <a href="#" class="text-slate-400 hover:text-accent transition-colors"><i data-lucide="facebook"
+                            class="w-5 h-5"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-accent transition-colors"><i data-lucide="twitter"
+                            class="w-5 h-5"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-accent transition-colors"><i data-lucide="instagram"
+                            class="w-5 h-5"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-accent transition-colors"><i data-lucide="linkedin"
+                            class="w-5 h-5"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-accent transition-colors"><i data-lucide="mail"
+                    class="w-5 h-5"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

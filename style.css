@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: #703cf0;
+  --color-secondary: #334155;
+  --color-accent: #3b82f6;
+  --color-accent-hover: #2563eb;
+
+  --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-glow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('./Assets/banner-image.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}   
