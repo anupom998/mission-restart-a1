@@ -1,12 +1,42 @@
-const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-
+// --- NAVBAR MOBILE MENU LOGIC ---
+const mobileMenuBtnB = document.getElementById("mobile-menu-btn-b");
+const mobileMenuBtnX = document.getElementById("mobile-menu-btn-x");
 const mobileMenu = document.getElementById("mobile-menu");
 
-mobileMenuBtn.addEventListener("click", () => {
-    
+
+
+function toggleMobileMenu() {
+    // Toggle menu visibility
     mobileMenu.classList.toggle("hidden");
-    mobileMenu.classList.toggle("flex");
-})
+    
+    // Toggle the Menu and X icons
+    mobileMenuBtnB.classList.toggle("hidden");
+    mobileMenuBtnB.classList.toggle("flex");
+    
+    mobileMenuBtnX.classList.toggle("hidden");
+    mobileMenuBtnX.classList.toggle("flex");
+}
+
+// Attach click events to BOTH buttons
+mobileMenuBtnB.addEventListener("click", toggleMobileMenu);
+mobileMenuBtnX.addEventListener("click", toggleMobileMenu);
+
+
+// --- NAVBAR ACTIVE STATE LOGIC ---
+const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+const navLinks = document.querySelectorAll('#navbar a');
+
+navLinks.forEach(link => {
+    // Clean up the href to match the path (removes './')
+    const linkPath = link.getAttribute('href').replace('./', '');
+    
+    // If the link matches the current page, make it primary colored
+    if (linkPath === currentPath) {
+        link.classList.remove('text-secondary');
+        link.classList.add('text-primary', 'font-bold');
+    }
+});
+
 
 
 
@@ -25,6 +55,37 @@ async function initProductsPage() {
     await fetchCategories();
     await loadProducts('All'); // Load all by default
 }
+
+
+
+// 2. Render Category Buttons with Active State
+function renderCategoryButtons() {
+    categoryContainer.innerHTML = allCategoriesList.map(cat => {
+        // Check if this button is the currently active one
+        const isActive = cat === currentCategory;
+        
+        // Define active vs inactive Tailwind classes
+        const activeStyles = "bg-primary text-white shadow-md";
+        const inactiveStyles = "bg-transparent text-primary hover:bg-primary hover:text-white";
+        
+        return `
+            <button onclick="handleCategoryClick('${cat}')" 
+                class="px-6 py-2 rounded-full border border-primary font-semibold transition-all duration-300 capitalize ${isActive ? activeStyles : inactiveStyles}">
+                ${cat}
+            </button>
+        `;
+    }).join('');
+}
+
+// 3. Handle Click Event
+async function handleCategoryClick(category) {
+    currentCategory = category; // Update the active tracker
+    renderCategoryButtons();    // Re-render buttons to update colors
+    await loadProducts(category); // Load the actual products
+}
+
+
+
 
 // 1. Fetch and Render Categories
 async function fetchCategories() {
@@ -141,11 +202,11 @@ async function openDetails(productId) {
     }
 }
 
-// Close Modal Logic
+// Close Modal 
 function closeModal() {
     productModal.classList.add('hidden');
     modalContent.innerHTML = ''; // Clear content
 }
 
-// Start the app!
+
 initProductsPage();

@@ -1,14 +1,43 @@
-const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-
+// --- NAVBAR MOBILE MENU LOGIC ---
+const mobileMenuBtnB = document.getElementById("mobile-menu-btn-b");
+const mobileMenuBtnX = document.getElementById("mobile-menu-btn-x");
 const mobileMenu = document.getElementById("mobile-menu");
 
-const productsContainer = document.getElementById("products-container");
+const productsContainer = document.getElementById("products-container"); //product container
 
-mobileMenuBtn.addEventListener("click", () => {
-    
+function toggleMobileMenu() {
+    // Toggle menu visibility
     mobileMenu.classList.toggle("hidden");
-    mobileMenu.classList.toggle("flex");
-})
+    
+    // Toggle the Menu and X icons
+    mobileMenuBtnB.classList.toggle("hidden");
+    mobileMenuBtnB.classList.toggle("flex");
+    
+    mobileMenuBtnX.classList.toggle("hidden");
+    mobileMenuBtnX.classList.toggle("flex");
+}
+
+// Attach click events to BOTH buttons
+mobileMenuBtnB.addEventListener("click", toggleMobileMenu);
+mobileMenuBtnX.addEventListener("click", toggleMobileMenu);
+
+
+// --- NAVBAR ACTIVE STATE LOGIC ---
+
+const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+const navLinks = document.querySelectorAll('#navbar a');
+
+navLinks.forEach(link => {
+    // Clean up the href to match the path (removes './')
+    const linkPath = link.getAttribute('href').replace('./', '');
+    
+    // If the link matches the current page, make it primary colored
+    if (linkPath === currentPath) {
+        link.classList.remove('text-secondary');
+        link.classList.add('text-primary', 'font-bold');
+    }
+});
+
 
 
 

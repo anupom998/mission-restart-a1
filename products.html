@@ -27,55 +27,61 @@
 
 <body class="bg-gray-50">
 
-    <!-- header and Navigation -->
-    <nav class="sticky w-full top-0 z-50 transition-all duration-300 glass bg-white shadow-lg" id="navbar">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <span class="font-bold text-2xl tracking-tight text-primary">SwiftCart</span>
-                </div>
+     <!-- Navigation and Header -->
+        <nav class="fixed w-full top-0 z-50 transition-all duration-300 glass bg-white shadow-lg
+        " id="navbar">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-20">
+                    <!-- Logo -->
+                    <div class="cursor-pointer" onclick="window.scrollTo(0,0)">
+                        <span class="font-bold text-2xl tracking-tight text-primary">SwiftCart</span>
+                    </div>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="index.html
+                        " class="text-secondary hover:text-primary font-medium transition-colors">Home</a>
+                        <a href="./products.html"
+                            class="text-secondary hover:text-primary font-medium transition-colors">Products</a>
+                        <a href="#about"
+                            class="text-secondary hover:text-primary font-medium transition-colors">About</a>
+                        <a href="#contact"
+                            class="text-secondary hover:text-primary font-medium transition-colors">Contact</a>
+                    </div>
+
+                    <!-- Icons & Mobile Menu Button -->
+                    <div class="flex items-center gap-4">
+                        <button class="relative p-2 text-secondary cursor-pointer hover:text-primary transition-colors"
+                            aria-label="Cart">
+                            <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                        </button>
+                        <!-- hamburger icon -->
+                        <button id="mobile-menu-btn-b"
+                            class="md:hidden p-2 text-secondary cursor-pointer hover:bg-slate-100 rounded-lg transition-colors">
+                            <i data-lucide="menu" class="w-6 h-6"></i>
+                        </button>
+                        <!-- cross btn -->
+                        <button id="mobile-menu-btn-x" class="md:hidden p-2 text-secondary cursor-pointer hover:bg-slate-100 rounded-lg transition-colors hidden">
+                            <i data-lucide="x" class="w-6 h-6"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu (Hidden by default) -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
+                <div class="px-4 pt-2 pb-6 space-y-2 w-full text-center">
                     <a href="./index.html"
-                        class="text-secondary hover:text-primary font-medium transition-colors">Home</a>
-                    <a href="#products"
-                        class="text-secondary hover:text-primary font-medium transition-colors">Products</a>
-                    <a href="#about" class="text-secondary hover:text-primary font-medium transition-colors">About</a>
+                        class="block px-3 py-3 rounded-md text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 transition-colors">Home</a>
+                    <a href="./products.html"
+                        class="block px-3 py-3 rounded-md text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 transition-colors">Products</a>
+                    <a href="#about"
+                        class="block px-3 py-3 rounded-md text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 transition-colors">About</a>
                     <a href="#contact"
-                        class="text-secondary hover:text-primary font-medium transition-colors">Contact</a>
-                </div>
-
-                <!-- Icons & Mobile Menu Button -->
-                <div class="flex items-center gap-4">
-                    <button class="relative p-2 text-secondary cursor-pointer hover:text-primary transition-colors"
-                        aria-label="Cart">
-                        <i data-lucide="shopping-cart" class="w-6 h-6"></i>
-                    </button>
-
-                    <button id="mobile-menu-btn"
-                        class="md:hidden p-2 text-secondary cursor-pointer hover:bg-slate-100 rounded-lg transition-colors">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
+                        class="block px-3 py-3 rounded-md text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 transition-colors">Contact</a>
                 </div>
             </div>
-        </div>
-
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
-            <div class="px-4 pt-2 pb-6 space-y-2 w-full text-center">
-                <a href="/index.html"
-                    class="block px-3 py-3 rounded-md text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 transition-colors">Home</a>
-                <a href="/products.html"
-                    class="block px-3 py-3 rounded-md text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 transition-colors">Products</a>
-                <a href="#about"
-                    class="block px-3 py-3 rounded-md text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 transition-colors">About</a>
-                <a href="#contact"
-                    class="block px-3 py-3 rounded-md text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 transition-colors">Contact</a>
-            </div>
-        </div>
-    </nav>
+        </nav>
     <!-- contents -->
     <main class="container mx-auto px-4 py-8">
         <h1 class="text-4xl font-bold text-center text-slate-800 mb-8">Our Products</h1>
