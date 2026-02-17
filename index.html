@@ -25,14 +25,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-gray-50 text-slate-800 antialiased selection:bg-accent selection:text-white">
+<body class="bg-gray-50">
 
     <!-- Header and Hero Section -->
     <header
-        class="hero relative bg-linear-to-r from-gray-900 to-gray-200 pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        class="hero relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
 
         <!-- Navigation -->
-        <nav class="fixed w-full top-0 z-50 transition-all duration-300 glass bg-white" id="navbar">
+        <nav class="fixed w-full top-0 z-50 transition-all duration-300 glass bg-white shadow-lg
+        " id="navbar">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-center h-20">
                     <!-- Logo -->
@@ -42,8 +43,9 @@
 
                     <!-- Desktop Menu -->
                     <div class="hidden md:flex items-center space-x-8">
-                        <a href="#" class="text-secondary hover:text-primary font-medium transition-colors">Home</a>
-                        <a href="#products"
+                        <a href="index.html
+                        " class="text-secondary hover:text-primary font-medium transition-colors">Home</a>
+                        <a href="./products.html"
                             class="text-secondary hover:text-primary font-medium transition-colors">Products</a>
                         <a href="#about"
                             class="text-secondary hover:text-primary font-medium transition-colors">About</a>
@@ -69,9 +71,9 @@
             <!-- Mobile Menu (Hidden by default) -->
             <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
                 <div class="px-4 pt-2 pb-6 space-y-2 w-full text-center">
-                    <a href="#"
+                    <a href="./index.html"
                         class="block px-3 py-3 rounded-md text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 transition-colors">Home</a>
-                    <a href="#products"
+                    <a href="./products.html"
                         class="block px-3 py-3 rounded-md text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 transition-colors">Products</a>
                     <a href="#about"
                         class="block px-3 py-3 rounded-md text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 transition-colors">About</a>
@@ -171,148 +173,23 @@
     <section id="products" class="py-24 bg-slate-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold text-black mb-6">Trending Now</h2>
-
-            <!-- Products Grid -->
-            <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-8">
-                <!-- Products will load here by JS -->
-
-                <!-- dummay products -->
-                <!-- product card 1 -->
-                <div
-                    class="group bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 w-full max-w-sm flex flex-col gap-4">
-
-                    <!-- Image Container -->
-                    <div class="bg-gray-100 overflow-hidden">
-                        <img src="https://images.pexels.com/photos/5556283/pexels-photo-5556283.jpeg" alt="Bag"
-                            class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500" />
-                    </div>
-
-                    <!-- badges -->
-                    <div class="flex justify-between items-center px-2">
-                        <div
-                            class=" bg-blue-100 text-primary text-xs font-bold px-3 py-1.5 rounded-full shadow-sm z-10">
-                            Men's clothing
-                        </div>
-                        <div class="flex items-center gap-1 mb-3">
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-                            <span class="text-xs text-slate-400 font-medium ml-1">3.9 (120)</span>
-                        </div>
-                    </div>
-
-
-                    <!-- Product Info -->
-                    <div class="px-2">
-                        <h3 class="font-semibold text-lg text-black">Stylish Bag</h3>
-                        <div class="mt-2">
-                            <span class="text-xl font-bold ">$109.95</span>
-                        </div>
-                    </div>
-                    <!-- buttons -->
-                    <div class="flex justify-between items-center gap-2 p-4">
-                        <button
-                            class="w-full  backdrop-blur-md font-semibold py-3 rounded-xl shadow-lg  flex items-center justify-center gap-2 border border-gray-400 cursor-pointer hover:bg-gray-100 hover:text-primary transition-all duration-300">
-                            <i data-lucide="eye" class="w-5 h-5"></i>
-                            Details
-                        </button>
-                        <button
-                            class="w-full bg-indigo-600 text-white  cursor-pointer backdrop-blur-md  font-semibold py-3 rounded-xl shadow-lg  flex items-center justify-center gap-2 hover:bg-indigo-700 transition-all duration-300">
-                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
-                            Add
-                        </button>
-                    </div>
-                </div>
-                <!-- product card 2 -->
-                <div
-                    class="group bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 w-full max-w-sm flex flex-col gap-4">
-
-                    <!-- Image Container -->
-                    <div class="bg-gray-100 overflow-hidden">
-                        <img src="https://images.pexels.com/photos/5556283/pexels-photo-5556283.jpeg" alt="Bag"
-                            class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500" />
-                    </div>
-
-                    <!-- badges -->
-                    <div class="flex justify-between items-center px-2">
-                        <div
-                            class=" bg-blue-100 text-primary text-xs font-bold px-3 py-1.5 rounded-full shadow-sm z-10">
-                            Men's clothing
-                        </div>
-                        <div class="flex items-center gap-1 mb-3">
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-                            <span class="text-xs text-slate-400 font-medium ml-1">3.9 (120)</span>
-                        </div>
-                    </div>
-
-
-                    <!-- Product Info -->
-                    <div class="px-2">
-                        <h3 class="font-semibold text-lg text-black">Stylish Bag</h3>
-                        <div class="mt-2">
-                            <span class="text-xl font-bold ">$109.95</span>
-                        </div>
-                    </div>
-                    <!-- buttons -->
-                    <div class="flex justify-between items-center gap-2 p-4">
-                        <button
-                            class="w-full  backdrop-blur-md font-semibold py-3 rounded-xl shadow-lg  flex items-center justify-center gap-2 border border-gray-400 cursor-pointer hover:bg-gray-100 hover:text-primary transition-all duration-300">
-                            <i data-lucide="eye" class="w-5 h-5"></i>
-                            Details
-                        </button>
-                        <button
-                            class="w-full bg-indigo-600 text-white  cursor-pointer backdrop-blur-md  font-semibold py-3 rounded-xl shadow-lg  flex items-center justify-center gap-2 hover:bg-indigo-700 transition-all duration-300">
-                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
-                            Add
-                        </button>
-                    </div>
-                </div>
-                <!-- product card 3 -->
-                <div
-                    class="group bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 w-full max-w-sm flex flex-col gap-4">
-
-                    <!-- Image Container -->
-                    <div class="bg-gray-100 overflow-hidden">
-                        <img src="https://images.pexels.com/photos/5556283/pexels-photo-5556283.jpeg" alt="Bag"
-                            class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500" />
-                    </div>
-
-                    <!-- badges -->
-                    <div class="flex justify-between items-center px-2">
-                        <div
-                            class=" bg-blue-100 text-primary text-xs font-bold px-3 py-1.5 rounded-full shadow-sm z-10">
-                            Men's clothing
-                        </div>
-                        <div class="flex items-center gap-1 mb-3">
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-                            <span class="text-xs text-slate-400 font-medium ml-1">3.9 (120)</span>
-                        </div>
-                    </div>
-
-
-                    <!-- Product Info -->
-                    <div class="px-2">
-                        <h3 class="font-semibold text-lg text-black">Stylish Bag</h3>
-                        <div class="mt-2">
-                            <span class="text-xl font-bold ">$109.95</span>
-                        </div>
-                    </div>
-                    <!-- buttons -->
-                    <div class="flex justify-between items-center gap-2 p-4">
-                        <button
-                            class="w-full  backdrop-blur-md font-semibold py-3 rounded-xl shadow-lg  flex items-center justify-center gap-2 border border-gray-400 cursor-pointer hover:bg-gray-100 hover:text-primary transition-all duration-300">
-                            <i data-lucide="eye" class="w-5 h-5"></i>
-                            Details
-                        </button>
-                        <button
-                            class="w-full bg-indigo-600 text-white  cursor-pointer backdrop-blur-md  font-semibold py-3 rounded-xl shadow-lg  flex items-center justify-center gap-2 hover:bg-indigo-700 transition-all duration-300">
-                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
-                            Add
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <!-- products will injected by javascript -->
+            <div id="products-container"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center">
+        </div>
         </div>
     </section>
-
+    <!-- product modal -->
+     <div id="product-modal"
+        class="fixed inset-0 bg-black/60 hidden z-50 flex justify-center items-center backdrop-blur-sm px-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full p-6 relative shadow-2xl overflow-y-auto max-h-[90vh]">
+            <button onclick="closeModal()"
+                class="absolute top-4 right-4 text-slate-500 hover:text-red-500 transition-colors cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div id="modal-content" class="flex flex-col md:flex-row gap-6 mt-4"></div>
+        </div>
+    </div>
 
 
     <!-- Footer -->
@@ -333,9 +210,9 @@
                 <div>
                     <h4 class="font-bold text-gray-400 mb-6">QUICK LINKS</h4>
                     <ul class="space-y-3 text-sm text-white">
-                        <li><a href="#" class="hover:text-accent transition-colors">Home</a></li>
+                        <li><a href="/index.html" class="hover:text-accent transition-colors">Home</a></li>
+                        <li><a href="/products.html" class="hover:text-accent transition-colors">Products</a></li>
                         <li><a href="#about" class="hover:text-accent transition-colors">About</a></li>
-                        <li><a href="#products" class="hover:text-accent transition-colors">Products</a></li>
                         <li><a href="#contact" class="hover:text-accent transition-colors">Contact</a></li>
                     </ul>
                 </div>

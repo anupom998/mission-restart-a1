@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - All Products</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+        --color-primary: #714fc4;
+        --color-secondary: #334155;
+        --color-accent: #3b82f6;
+        --color-accent-hover: #2563eb;
+        
+        --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+        
+        --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-glow: 0 0 15px rgba(59, 130, 246, 0.5);
+      }
+    </style>
+    <!-- Heroicons Script (for icons) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- custom css file  -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- header and Navigation -->
+    <nav class="sticky w-full top-0 z-50 transition-all duration-300 glass bg-white shadow-lg" id="navbar">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <span class="font-bold text-2xl tracking-tight text-primary">SwiftCart</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="./index.html"
+                        class="text-secondary hover:text-primary font-medium transition-colors">Home</a>
+                    <a href="#products"
+                        class="text-secondary hover:text-primary font-medium transition-colors">Products</a>
+                    <a href="#about" class="text-secondary hover:text-primary font-medium transition-colors">About</a>
+                    <a href="#contact"
+                        class="text-secondary hover:text-primary font-medium transition-colors">Contact</a>
+                </div>
+
+                <!-- Icons & Mobile Menu Button -->
+                <div class="flex items-center gap-4">
+                    <button class="relative p-2 text-secondary cursor-pointer hover:text-primary transition-colors"
+                        aria-label="Cart">
+                        <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                    </button>
+
+                    <button id="mobile-menu-btn"
+                        class="md:hidden p-2 text-secondary cursor-pointer hover:bg-slate-100 rounded-lg transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2 w-full text-center">
+                <a href="/index.html"
+                    class="block px-3 py-3 rounded-md text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 transition-colors">Home</a>
+                <a href="/products.html"
+                    class="block px-3 py-3 rounded-md text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 transition-colors">Products</a>
+                <a href="#about"
+                    class="block px-3 py-3 rounded-md text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 transition-colors">About</a>
+                <a href="#contact"
+                    class="block px-3 py-3 rounded-md text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- contents -->
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center text-slate-800 mb-8">Our Products</h1>
+        <!-- categories -->
+        <div id="category-container" class="flex flex-wrap justify-center gap-3 mb-10">
+        </div>
+        <!-- products container -->
+        <div id="products-container"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center">
+        </div>
+    </main>
+
+    <div id="product-modal"
+        class="fixed inset-0 bg-black/60 hidden z-50 flex justify-center items-center backdrop-blur-sm px-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full p-6 relative shadow-2xl overflow-y-auto max-h-[90vh]">
+            <button onclick="closeModal()"
+                class="absolute top-4 right-4 text-slate-500 hover:text-red-500 transition-colors cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div id="modal-content" class="flex flex-col md:flex-row gap-6 mt-4"></div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 border-t border-slate-200 pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <!-- Logo -->
+                    <div class="cursor-pointer mb-6" onclick="window.scrollTo(0,0)">
+                        <span class="font-bold text-2xl tracking-tight text-primary">SwiftCart</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Making premium fashion accessible to everyone. Quality, style, and comfort in one place.
+                    </p>
+
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-gray-400 mb-6">QUICK LINKS</h4>
+                    <ul class="space-y-3 text-sm text-white">
+                        <li><a href="/index.html" class="hover:text-accent transition-colors">Home</a></li>
+                        <li><a href="/products.html" class="hover:text-accent transition-colors">Products</a></li>
+                        <li><a href="#about" class="hover:text-accent transition-colors">About</a></li>
+                        <li><a href="#contact" class="hover:text-accent transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-gray-400 mb-6">SUPPORTS</h4>
+                    <ul class="space-y-3 text-sm text-white">
+                        <li><a href="#" class="hover:text-accent transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Shipping</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Returns</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <h4 class="font-bold text-gray-400 uppercase">Subscribe to Our Newsletter</h4>
+                    <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, harum.</p>
+                    <!-- newsletter form -->
+                    <form class="flex flex-col lg:flex-row  gap-4 mx-auto w-full"
+                        onsubmit="event.preventDefault(); alert('Subscribed!')">
+                        <input type="email" placeholder="Enter your email"
+                            class="lg:w-1/2 px-4 py-4 rounded-xl bg-white border border-slate-700 placeholder-gray-500 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all">
+                        <button type="submit"
+                            class="lg:w-1/2 py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 shadow-lg hover:shadow-indigo/50 transition-all cursor-pointer">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-100 pt-8 flex flex-col-reverse md:flex-row justify-between  gap-6">
+                <p class="text-slate-400 text-sm">© 2026 SwiftCart, Inc. All rights reserved.</p>
+
+                <div class="flex gap-6">
+                    <a href="#" class="text-slate-400 hover:text-accent transition-colors"><i data-lucide="facebook"
+                            class="w-5 h-5"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-accent transition-colors"><i data-lucide="twitter"
+                            class="w-5 h-5"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-accent transition-colors"><i data-lucide="instagram"
+                            class="w-5 h-5"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-accent transition-colors"><i data-lucide="linkedin"
+                            class="w-5 h-5"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-accent transition-colors"><i data-lucide="mail"
+                            class="w-5 h-5"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="products.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
